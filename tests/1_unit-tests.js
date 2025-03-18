@@ -14,4 +14,9 @@ suite('Unit Tests', () => {
         const result = solver.checkColPlacement(ps, 0, 8, 1);
         assert.isTrue(result);
     })
+    test('Logic handles a valid region (3x3 grid) placement', () => {
+        const result = solver.checkRegionPlacement(ps, 3, 4, 1);
+        assert.isTrue(result);
+    })
+    
 });

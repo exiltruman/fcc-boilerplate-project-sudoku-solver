@@ -10,7 +10,7 @@ class SudokuSolver {
   }
 
   checkRowPlacement(puzzleString, row, column, value) {
-    const rowValues = puzzleString.slice(row*9, 9);
+    const rowValues = puzzleString.slice(row*9, row*9+9);
     return (rowValues.indexOf(value) === -1)
   }
 
@@ -19,13 +19,14 @@ class SudokuSolver {
       if((index-(column))%9 === 0) return char;
     }).join("")
 
-    console.log(columnValues);
-
     return (columnValues.indexOf(value) === -1)
   }
 
   checkRegionPlacement(puzzleString, row, column, value) {
-
+    console.log(row)
+    let rowValues = puzzleString.slice(row*9, row*9+9); 
+    rowValues = rowValues.slice(Math.floor(row/3)*3, Math.floor(row/3)*3+3);
+    return false;
   }
 
   solve(puzzleString) {
